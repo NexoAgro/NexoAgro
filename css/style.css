@@ -13,7 +13,7 @@
             font-family: var(--font-principal);
             font-weight: 400;
             background-color: var(--amarilloPrincipal-color);
-            color: white;
+            color: rgb(0, 0, 0);
             text-align: center;
             padding: 1em;
             border-radius: 2.2em 2.2em 0 0 ;
