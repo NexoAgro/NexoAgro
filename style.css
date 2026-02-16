@@ -1,0 +1,219 @@
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        body {
+            font-family: var(--font-principal);
+            font-weight: 400;
+        }
+        footer {
+            font-family: var(--font-principal);
+            font-weight: 400;
+            background-color: var(--verdeSecundario-color);
+            color: white;
+            text-align: center;
+            padding: 1em;
+            border-radius: 2.2em 2.2em 0 0 ;
+        }
+        :root{
+            --font-principal: 'Poppins', sans-serif;
+            --verdePrincipal-color: #3b9e0d;/*61bf36 verde anterior*/
+            --verdeSecundario-color: #3A591B;
+            --amarilloPrincipal-color: #F2e205;
+            --amarilloSecundario-color: #f2cb05;
+            --marronPrincipal-color: #8C543F;
+        }
+        nav {
+            background-color: var(--verdeSecundario-color);
+            color: white;
+            padding: 1em;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-principal);
+            font-weight: 600;
+        }
+
+        .logo {
+            font-family: var(--font-principal);
+            font-weight: 700;
+            color:var(--amarilloSecundario-color);
+            display: flex;
+            align-items: center;
+            gap: 0.5em; /* Espacio entre imagen y texto */
+            font-size: 1.5em;
+            font-weight: 700;
+        }
+        .logo-icon {
+            width: 40px;  /* Ajusta el tamaño aquí */
+            height: 40px;
+            object-fit: contain; /* Mantiene las proporciones */
+        }
+        .logo-text {
+            font-family: var(--font-principal);
+            color: var(--amarilloSecundario-color);
+        }
+        .logo-icon-grande {
+            width: 15rem;  /* Ajusta el tamaño aquí */
+            height: 15rem;
+            object-fit: contain; /* Mantiene las proporciones */
+        }
+        .hero {
+            background-color: var(--verdePrincipal-color);
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            border-radius: 0 0 2.2em 2.2em;
+            padding: 2em;
+        }
+
+        .hero h1 {
+            color: var(--amarilloPrincipal-color);
+            font-size: clamp(2em, 8vw, 5em);
+            margin-bottom: 0.5em;
+            text-shadow: 
+            2px 2px 4px rgba(0, 0, 0, 0.4),
+            0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .hero p {
+            font-size: clamp(1em, 3vw, 1.5em);
+            color: #fff;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Sección de título */
+        .section-title {
+            text-align: center;
+            margin: 2em 1em 1em;
+            font-size: clamp(1.5em, 4vw, 2em);
+            color: #333;
+        }
+
+        /* ========================================
+           GRILLA DE CARTAS - RESPONSIVE
+        ======================================== */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .card-grid-item {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border-left: 4px solid var(--verdeSecundario-color);
+        }
+
+        .card-grid-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .card-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--verdeSecundario-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .card-grid-item h4 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        .card-grid-item p {
+            color: #777;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        .card-icon.secundario {
+            background: var(--marronPrincipal-color);
+        }
+
+        .card-icon.terceario {
+            background: var(--amarilloPrincipal-color);
+        }
+        .card-grid-item.secundario{
+            border-left-color: var(--marronPrincipal-color);
+        }
+        .card-grid-item.terceario{
+            border-left-color: var(--amarilloPrincipal-color);
+        }
+        /* ========================================
+           MEDIA QUERIES - RESPONSIVE
+        ======================================== */
+        
+        /* Tablets */
+        @media (max-width: 768px) {
+            .hero {
+                border-radius: 0 0 1em 1em;
+            }
+
+            .cards-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 20px;
+                padding: 15px;
+            }
+
+            .card-grid-item {
+                padding: 20px;
+            }
+        }
+
+        /* Móviles */
+        @media (max-width: 480px) {
+            nav {
+                padding: 0.8em;
+            }
+
+            .logo {
+                font-size: 1.2em;
+            }
+
+            .hero {
+                border-radius: 0 0 1.9em 1.9em;
+            }
+
+            .section-title {
+                margin: 1.5em 0.5em 0.5em;
+            }
+
+            .cards-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+                padding: 10px;
+            }
+
+            .card-grid-item {
+                padding: 20px;
+            }
+
+            .card-grid-item:hover {
+                transform: translateY(-4px);
+            }
+        }
